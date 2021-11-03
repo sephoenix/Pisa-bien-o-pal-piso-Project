@@ -1,0 +1,8 @@
+
+.splashScreen {
+    background-image: url(images/Splash.jpeg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
