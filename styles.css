@@ -1,8 +1,40 @@
+body {
+    background-color: black;
+}
 
+.container{
+    margin:0 auto;
+    width:500px;
+}
 .splashScreen {
     background-image: url(images/Splash.jpeg);
     background-repeat: no-repeat;
+    background-position: center;
+    width: 980px;
+    height: 640px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+canvas#pisaBien {
+    border: 1px red solid;
+}
+
+.hide {
+    display: none;
+}
+button  {
+    background-image: url(images/cristal\ roto.jpeg);
+    background-size: contain;
+    border:cornsilk;
+    color: rgb(247, 247, 247);
+    text-shadow: 3px 3px rgb(171, 17, 17);
+    text-transform: uppercase;
+    border-radius: 3px;
+    height: 100px;
+    width: 210px;
+    font-size: 30px;
+    padding: 2px;
+
 }
