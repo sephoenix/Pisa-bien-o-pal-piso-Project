@@ -36,5 +36,7 @@ button  {
     width: 210px;
     font-size: 30px;
     padding: 2px;
-
+}
+.mostrar {
+    display: block;
 }

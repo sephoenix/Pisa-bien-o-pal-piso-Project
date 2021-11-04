@@ -1,8 +1,27 @@
 class Player {
-    constructor (life){
-    this.life = life;
-    this.direction = direction;
-    this.position = position;
+    constructor (x, y, width, height, color){
+    //this.life = life;
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.color = color;
     }
-    _jump();
+
+    _drawPlayer(ctx){
+        
+    }
+
+    _moverRigth() {
+        this.x = x + 1;
+    }
+
+    _moveLeft() {
+        this.x = x -1;
+    }
+    // _drawPlayer(ctx)
+    // moveRight()
+    // moveLeft()
+
+        
 }
