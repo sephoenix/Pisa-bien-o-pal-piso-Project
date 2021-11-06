@@ -9,10 +9,14 @@ class Player {
     }
 
     _moveRight() {
-        this.x = this.x + 1;
+        this.x = this.x + 140;
     }
 
     _moveLeft() {
-        this.x = this.x - 1;
+        this.x = this.x - 140;
+    }
+
+    _moveDown() {
+        this.y = this.y + 70;
     }
 }    

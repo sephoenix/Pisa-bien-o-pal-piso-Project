@@ -1,7 +1,7 @@
 class Game {
     constructor(ctx) {
         this.ctx = ctx;
-        this.player = new Player(10, 10, 20, 20, "red");
+        this.player = new Player(210, 20, 50, 50, "white");
         this.steps = steps;
     }
 
@@ -20,12 +20,12 @@ class Game {
 
 
     _clean(){
-        this.ctx.clearRect(0, 0, 500, 960);
+        this.ctx.clearRect(0, 0, 500, 800);
     }
     
     _assignControls (){
         document.addEventListener('keydown', (event) => {
-        console.log(event);
+        //console.log(event);
         switch(event.code){
         case "ArrowRight":
         this.player._moveRight();
@@ -33,6 +33,8 @@ class Game {
         case "ArrowLeft":
         this.player._moveLeft();
         break;
+        case "ArrowDown":
+        this.player._moveDown();
         default:
         break;
         }
