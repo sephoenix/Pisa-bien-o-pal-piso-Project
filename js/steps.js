@@ -1,0 +1,18 @@
+const steps = [
+    new Step (20, 20, 20, 20, 'blue', true),
+    new Step (60, 20, 20, 20, 'red', false),
+    new Step (20, 90, 20, 20, 'red', false),
+    new Step (60, 90, 20, 20, 'blue', true),
+    new Step (20, 130, 20, 20, 'blue', true),
+    new Step (60, 130, 20, 20, 'red', false),
+    new Step (20, 160, 20, 20, 'blue', true),
+    new Step (60, 160, 20, 20, 'red', false),
+    new Step (20, 190, 20, 20, 'red', false),
+    new Step (60, 190, 20, 20, 'blue', true),
+    new Step (60, 220, 20, 20, 'red', false),
+    new Step (20, 250, 20, 20, 'blue', true),
+    new Step (60, 250, 20, 20, 'red', false),
+    new Step (20, 220, 20, 20, 'blue', true),
+    new Step (20, 280, 20, 20, 'blue', true),
+    new Step (60, 280, 20, 20, 'red', false),
+    ];

@@ -1,53 +1,77 @@
 class Game {
-    constructor(options) {
-        this.ctx = options.ctx;
-        this.body = options.body;
-        this.player = new Player(30,40,100,100,"green")
-        this.steps = [];
+    constructor(ctx) {
+        this.ctx = ctx;
+        //this.body = options.body;
+        this.player = new Player(10, 10, 20, 20, "red");
+        this.steps = steps;
     }
 
     _drawPlayer() {
-        this.ctx.fillStyle='red';
-        this.ctx.FillRect(10, 10, 20, 20);
+        this.ctx.fillStyle = this.player.color;
+        this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
     }
 
-    _generateSteps(){
-        let steps = [ ];
-        const step1 = new Step (20, 20, 20, 20, 'blue', true);
-        const step2 = new Step (60, 20, 20, 20, 'red', false);
-        const step3 = new Step (20, 90, 20, 20, 'red', false);
-        const step4 = new Step (60, 90, 20, 20, 'blue', true);
-        const step5 = new Step (20, 130, 20, 20, 'blue', true);
-        const step6 = new Step (60, 130, 20, 20, 'red', false);
-        const step7 = new Step (20, 160, 20, 20, 'blue', true);
-        const step8 = new Step (60, 160, 20, 20, 'red', false);
-        const step9 = new Step (20, 190, 20, 20, 'red', false);
-        const step10 = new Step (60, 190, 20, 20, 'blue', true);
-        const step11 = new Step (20, 220, 20, 20, 'blue', true);
-        const step12 = new Step (60, 220, 20, 20, 'red', false);
-        const step13 = new Step (20, 250, 20, 20, 'blue', true);
-        const step14 = new Step (60, 250, 20, 20, 'red', false);
-        const step15 = new Step (20, 280, 20, 20, 'blue', true);
-        const step16 = new Step (60, 280, 20, 20, 'red', false);
-
-        steps.push(step1);
-        
-        steps._drawStep();
-
+    _drawSteps(){
+        for (let i = 0; i < this.steps.length; i++){
+            this.steps[i]._drawStep(this.ctx);
         }
+    }
+
+    // _drawSteps(){
+       
+    //     this.steps = steps;
+    //     //return this.steps;
+    // }
+
+    _clean(){
+        this.ctx.clearRect(0, 0, 500, 960);
+    }
+    
+    _assignControls (){
+        document.addEventListener('keydown', (event) => {
+            console.log(event);
+            switch(event.code){
+                case "ArrowRight":
+                    this.player._moveRight();
+                    break;
+                case "ArrowLeft":
+                    this.player._moveLeft();
+                    break;
+                default:
+                break;
+            }
+        });
+    }
+
+
+    
+        _renderGame(){
+            this._clean();
+            this._drawSteps();
+            this._drawPlayer();
+            window.requestAnimationFrame(this._renderGame.bind(this));
+        }
+    
+        start (){
+            this._assignControls();
+            window.requestAnimationFrame(this._renderGame.bind(this));
+            //this.steps[i]._drawSteps();
+        }
+}
 
         // genera diversos const step1 = new Step(10, 30, true)
         // this.steps.push(step1)
         // this.steps[i]._drawStep();
-    }
+        
+        /*_assignControls(){
+            // Teclas izq drch this.player.moveRight()
+        }
+        */
+        /*start (){
+            this.player._drawPlayer();
+            _drawSteps();
+            // request animation frame
+        }
+    */
 
-    _assignControls(){
-        // Teclas izq drch this.player.moveRight()
-    }
 
-    start(){
-        this.player._drawPlayer();
-        this._generateSteps();
-        // request animation frame
-    }
-}

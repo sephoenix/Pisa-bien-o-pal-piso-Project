@@ -10,7 +10,9 @@ class Step {
         this.color = color;
         this.stat = stat;
     }
-    _drawStep() {
-        let step = new Step ()
+    
+    _drawStep(ctx) {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height)
     }
 }

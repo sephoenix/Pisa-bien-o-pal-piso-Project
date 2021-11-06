@@ -8,20 +8,14 @@ class Player {
     this.color = color;
     }
 
-    _drawPlayer(ctx){
-        
-    }
-
-    _moverRigth() {
-        this.x = x + 1;
+    _moveRight() {
+        this.x = this.x + 1;
     }
 
     _moveLeft() {
-        this.x = x -1;
+        this.x = this.x - 1;
     }
+}    
     // _drawPlayer(ctx)
     // moveRight()
     // moveLeft()
-
-        
-}
