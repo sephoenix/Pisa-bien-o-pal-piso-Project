@@ -12,13 +12,13 @@ class Game {
 
     _drawSteps(){
         for (let i = 0; i < this.steps.length; i++){
-            this.steps[i]._drawStep(this.ctx);
+        this.steps[i]._drawStep(this.ctx);
         }
     }
 
     _checkSteps(){
         for (let i = 0; i < this.steps.length; i++){
-            if (this.player.x === this.steps[i].x && this.steps[i].stat === false){
+            if (this.player.x === this.steps[i].x && this.player.y === this.steps[i].y && this.steps[i].stat === false){
                 console.log("muerto");
             }
         }
