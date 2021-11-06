@@ -20,3 +20,4 @@ class Player {
         this.y = this.y + 70;
     }
 }    
+// bloquear con x maxima y minima

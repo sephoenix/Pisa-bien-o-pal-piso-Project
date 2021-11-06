@@ -16,7 +16,13 @@ class Game {
         }
     }
 
-    //_checkSteps
+    _checkSteps(){
+        for (let i = 0; i < this.steps.length; i++){
+            if (this.player.x === this.steps[i].x && this.steps[i].stat === false){
+                console.log("muerto");
+            }
+        }
+    }
 
 
     _clean(){
@@ -25,7 +31,6 @@ class Game {
     
     _assignControls (){
         document.addEventListener('keydown', (event) => {
-        //console.log(event);
         switch(event.code){
         case "ArrowRight":
         this.player._moveRight();
@@ -45,6 +50,7 @@ class Game {
         this._clean();
         this._drawSteps();
         this._drawPlayer();
+        this._checkSteps();
         window.requestAnimationFrame(this._renderGame.bind(this));
         }
     
