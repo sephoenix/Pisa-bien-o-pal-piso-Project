@@ -5,12 +5,7 @@ function pisaBienGame(){
     const ctx = canvas.getContext('2d'); 
     const game = new Game(ctx);
     game.start();  
-    //start();
 }
-
-    // FUNCION NUEVA QUE: startGame() 1. ESCONDA LOS ELEMENTOS DEL SPLASH SCREEN
-    // 2. MUESTRE LOS ELEMENTOS DEL CANVAS
-    // 3. pisaBienGame.start()
 
 function startGame(){
     const vamohAJugar = document.querySelector('#prePlay');

@@ -1,7 +1,6 @@
 class Game {
     constructor(ctx) {
         this.ctx = ctx;
-        //this.body = options.body;
         this.player = new Player(10, 10, 20, 20, "red");
         this.steps = steps;
     }
@@ -17,11 +16,8 @@ class Game {
         }
     }
 
-    // _drawSteps(){
-       
-    //     this.steps = steps;
-    //     //return this.steps;
-    // }
+    //_checkSteps
+
 
     _clean(){
         this.ctx.clearRect(0, 0, 500, 960);
@@ -29,49 +25,29 @@ class Game {
     
     _assignControls (){
         document.addEventListener('keydown', (event) => {
-            console.log(event);
-            switch(event.code){
-                case "ArrowRight":
-                    this.player._moveRight();
-                    break;
-                case "ArrowLeft":
-                    this.player._moveLeft();
-                    break;
-                default:
-                break;
-            }
+        console.log(event);
+        switch(event.code){
+        case "ArrowRight":
+        this.player._moveRight();
+        break;
+        case "ArrowLeft":
+        this.player._moveLeft();
+        break;
+        default:
+        break;
+        }
         });
     }
 
-
-    
-        _renderGame(){
-            this._clean();
-            this._drawSteps();
-            this._drawPlayer();
-            window.requestAnimationFrame(this._renderGame.bind(this));
+    _renderGame(){
+        this._clean();
+        this._drawSteps();
+        this._drawPlayer();
+        window.requestAnimationFrame(this._renderGame.bind(this));
         }
     
-        start (){
-            this._assignControls();
-            window.requestAnimationFrame(this._renderGame.bind(this));
-            //this.steps[i]._drawSteps();
+    start (){
+        this._assignControls();
+        window.requestAnimationFrame(this._renderGame.bind(this));
         }
 }
-
-        // genera diversos const step1 = new Step(10, 30, true)
-        // this.steps.push(step1)
-        // this.steps[i]._drawStep();
-        
-        /*_assignControls(){
-            // Teclas izq drch this.player.moveRight()
-        }
-        */
-        /*start (){
-            this.player._drawPlayer();
-            _drawSteps();
-            // request animation frame
-        }
-    */
-
-

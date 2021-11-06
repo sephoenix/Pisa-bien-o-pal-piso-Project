@@ -16,6 +16,3 @@ class Player {
         this.x = this.x - 1;
     }
 }    
-    // _drawPlayer(ctx)
-    // moveRight()
-    // moveLeft()
