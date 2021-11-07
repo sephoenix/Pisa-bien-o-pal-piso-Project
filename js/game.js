@@ -25,6 +25,21 @@ class Game {
         }
     }
 
+/*     _drawTimer () {
+        let time = new Date(45000);
+        console.log(timer);
+
+        function temp(){
+            let ms = time.getMilliseconds()-500;
+            time.setMilliseconds(ms);
+            let text = tiempo.getSeconds();
+            spanTime.innerHTML = text;
+            if (time.getSeconds()<=0){
+                gameOver();
+            }
+        }
+    } */
+
     _clean(){
         this.ctx.clearRect(0, 0, 500, 800);
     }
@@ -51,6 +66,7 @@ class Game {
         this._drawSteps();
         this._drawPlayer();
         this._checkSteps();
+       /*  this._drawTimer(); */
 /*         if (this.player._stepWrong()){
             this.player._stop();
         } */

@@ -7,6 +7,14 @@ function pisaBienGame(){
     game.start();  
     }
 
+function daleGame(){
+    const dale = document.querySelector('#dale');
+    dale.addEventListener('click', function(){
+        dale.classList.add('hide');
+        pisaBienGame();
+    })
+}
+    
 function startGame(){
     const vamohAJugar = document.querySelector('#prePlay');
     vamohAJugar.addEventListener('click', function(){
@@ -14,8 +22,8 @@ function startGame(){
         intro.classList.add('hide');
         const game = document.getElementById('game');
         game.classList.remove('hide');
-        game.classList.add('mostrar');
-        pisaBienGame()
+        //game.classList.add('mostrar');
+        daleGame()
       })
     }
 
@@ -24,7 +32,7 @@ function startGame(){
         let canvas = document.querySelector('#pisaBien');
         canvas.classList.remove('mostrar');
         gameOver.classList.remove('hide');
-        gameOver.classList.add('mostrar');
+        //gameOver.classList.add('mostrar');
     }
 
     function victory(){
