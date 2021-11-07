@@ -40,3 +40,15 @@ button  {
 .mostrar {
     display: block;
 }
+
+#gameover {
+    background-image: url(images/Youdied.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#win {
+    background-image: url(images/Win.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}

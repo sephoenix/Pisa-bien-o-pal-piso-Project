@@ -25,7 +25,6 @@ class Game {
         }
     }
 
-
     _clean(){
         this.ctx.clearRect(0, 0, 500, 800);
     }
@@ -52,6 +51,9 @@ class Game {
         this._drawSteps();
         this._drawPlayer();
         this._checkSteps();
+/*         if (this.player._stepWrong()){
+            this.player._stop();
+        } */
         window.requestAnimationFrame(this._renderGame.bind(this));
         }
     
@@ -60,5 +62,4 @@ class Game {
         window.requestAnimationFrame(this._renderGame.bind(this));
         }
 }
-
 // definir stat = 'dead' para que oculte pantalla y muestre gameOVer
