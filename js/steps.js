@@ -13,6 +13,9 @@ const steps = [
     new Step (350, 440, 50, 50, 'blue', true),
     new Step (70, 510, 50, 50, 'blue', true),
     new Step (350, 510, 50, 50, 'red', false),
-    new Step (70, 590, 50, 50, 'blue', true),
-    new Step (350, 590, 50, 50, 'red', false),
+    new Step (70, 580, 50, 50, 'blue', true),
+    new Step (350, 580, 50, 50, 'red', false),
+    new Step (70, 650, 50, 50, 'blue', true),
+    new Step (350, 650, 50, 50, 'red', false),
+    new Step (210, 720, 50, 50, 'white', true),
     ];

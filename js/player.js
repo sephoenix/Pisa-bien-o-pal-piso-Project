@@ -11,10 +11,14 @@ class Player {
     _moveRight() {
         if (this.x === 350){
             this.x = this.x;
-        } else if ( this.y >= 90){
+        } else if ( this.y >= 90 && this.y < 630){
             this.x = this.x + 280;
             this.y = this.y + 70;
-        } else {
+        } else if ( this.x === 70 && this.y < 630){
+            this.x = this.x + 70;
+            this.y = this.y + 70
+        } 
+        else {
             this.x = this.x + 140;
             this.y = this.y + 70;
         }
@@ -23,9 +27,12 @@ class Player {
     _moveLeft() {
         if(this.x === 70){
             this.y = this.y;
-        } else if ( this.y >= 90){
+        } else if ( this.y >= 90 && this.y < 630){
             this.x = this.x - 280;
             this.y = this.y + 70;
+        } else if (this.x === 350 && this.y < 630){
+            this.x = -70;
+            this.y = +70;
         } else {
         this.x = this.x - 140;
         this.y = this.y + 70;
@@ -33,7 +40,12 @@ class Player {
     }
 
     _moveDown() {
-      this.y = this.y + 70;
+        if (this.x === 210 && this.y === 20){
+            this.y ===this.y
+        } else if ( this.y === 650){
+            this.y = this.y;
+        } else {
+        this.y = this.y + 70;
+        }
     }
-}    
-// falta bloquear bajar en el punto inicial
+}

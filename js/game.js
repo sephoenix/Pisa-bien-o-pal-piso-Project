@@ -1,7 +1,7 @@
 class Game {
     constructor(ctx) {
         this.ctx = ctx;
-        this.player = new Player(210, 20, 50, 50, "white");
+        this.player = new Player(210, 20, 50, 50, "green");
         this.steps = steps;
     }
 
