@@ -25,20 +25,16 @@ class Game {
         }
     }
 
-/*     _drawTimer () {
-        let time = new Date(45000);
-        console.log(timer);
-
-        function temp(){
-            let ms = time.getMilliseconds()-500;
-            time.setMilliseconds(ms);
-            let text = tiempo.getSeconds();
-            spanTime.innerHTML = text;
-            if (time.getSeconds()<=0){
-                gameOver();
-            }
+    _drawTime() {
+        let time = window.setTimeout(timer,10000);
+        function timer(){
+            console.log('You died');
         }
-    } */
+        
+        this.ctx.font = "30px verdana";
+        this.ctx.fillStyle = 'white';
+        this.ctx.fillText(time, 5, 30);
+    }
 
     _clean(){
         this.ctx.clearRect(0, 0, 500, 800);
@@ -66,10 +62,7 @@ class Game {
         this._drawSteps();
         this._drawPlayer();
         this._checkSteps();
-       /*  this._drawTimer(); */
-/*         if (this.player._stepWrong()){
-            this.player._stop();
-        } */
+        this._drawTime();
         window.requestAnimationFrame(this._renderGame.bind(this));
         }
     
