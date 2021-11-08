@@ -30,7 +30,6 @@ class Game {
         function timer(){
             console.log('You died');
         }
-        
         this.ctx.font = "30px verdana";
         this.ctx.fillStyle = 'white';
         this.ctx.fillText(time, 5, 30);

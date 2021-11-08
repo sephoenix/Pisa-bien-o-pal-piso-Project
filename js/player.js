@@ -6,7 +6,6 @@ class Player {
     this.height = height;
     this.color = color;
     this.stat = stat;
-/*     this.intervalId = undefined; */
     }
 
     _moveRight() {
@@ -49,17 +48,4 @@ class Player {
         this.y = this.y + 70;
         }
     }
-
-/*     _stepWrong(){
-        if (this.player.x === this.step.x && this.player.y === this.step.y && this.step.stat === false){
-        console.log('You are dead!')
-        }
-    };
-
-    stop(){
-        if (this.intervalId){
-            clearInterval(this.intervalId);
-            this.intervalId = undefined;
-        }
-    } */
 }
