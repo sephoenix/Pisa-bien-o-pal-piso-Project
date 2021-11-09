@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function pisaBienGame(){
     let canvas = document.querySelector('#pisaBien');
     const ctx = canvas.getContext('2d'); 
-    const game = new Game(ctx);
-    game.start();  
+    const game = new Game(
+        {
+            ctx: ctx,
+            player: new Player(210, 20, 50, 50, "green"),
+        },
+        gameOver);
+    game.start();
     }
 
 function daleGame(){
@@ -28,7 +33,8 @@ function startGame(){
     }
 
     function gameOver(){
-        let gameOver = document.querySelector('#gameover');
+        console.log("gameover")
+        let gameOver = document.querySelector('#gameOver');
         let canvas = document.querySelector('#pisaBien');
         canvas.classList.remove('mostrar');
         gameOver.classList.remove('hide');
