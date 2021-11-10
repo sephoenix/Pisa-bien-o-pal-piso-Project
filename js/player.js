@@ -1,12 +1,11 @@
 class Player {
     constructor (x, y, width, height, color, stat){
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.color = color;
-    this.stat = stat;
-    //this.intervalId = undefined;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.stat = stat;
     }
 
     _moveRight() {
@@ -49,11 +48,4 @@ class Player {
         this.y = this.y + 70;
         }
     }
-
-/*     stop(){
-        if (this.intervalId) {
-            clearInterval(this.intervalId);
-            this.intervalId = undefined;
-        }
-    } */
 }

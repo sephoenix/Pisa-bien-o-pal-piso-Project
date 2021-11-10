@@ -5,8 +5,8 @@ function pisaBienGame(){
     const ctx = canvas.getContext('2d'); 
     const game = new Game(
         {
-            ctx: ctx,
-            player: new Player(210, 20, 50, 50, "green"),
+        ctx: ctx,
+        player: new Player(210, 20, 50, 50, "green"),
         },
         gameOver);
     game.start();
@@ -27,26 +27,36 @@ function startGame(){
         intro.classList.add('hide');
         const game = document.getElementById('game');
         game.classList.remove('hide');
-        //game.classList.add('mostrar');
         daleGame()
       })
     }
 
     function gameOver(){
-        console.log("gameover")
         let gameOver = document.querySelector('#gameOver');
         let canvas = document.querySelector('#pisaBien');
-        canvas.classList.remove('mostrar');
+        canvas.classList.remove('show');
+        canvas.classList.add('hide');
         gameOver.classList.remove('hide');
-        //gameOver.classList.add('mostrar');
+        reload();
+    }
+
+    function reload(){
+        const reload = document.querySelector('#reload');
+        reload.addEventListener('click', function(){
+            reload.classList.add('hide');
+            const gameOver = document.querySelector('#gameOver');
+            gameOver.classList.add('hide');
+            gameOver.classList.remove('show');
+            daleGame();
+        })
     }
 
     function victory(){
         let win = document.querySelector('#win');
         let canvas = document.querySelector('#pisaBien');
-        canvas.classList.remove('mostrar');
+        canvas.classList.remove('show');
         win.classList.remove('hide');
-        win.classList.add('mostrar');
+        win.classList.add('show');
     }
 
 startGame();
