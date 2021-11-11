@@ -6,9 +6,9 @@ function pisaBienGame(){
     const game = new Game(
         {
         ctx: ctx,
-        player: new Player(210, 20, 50, 50, "green"),
+        player: new Player(210, 20, 30, 50, "green"),
         },
-        gameOver);
+        gameOver, victory);
     game.start();
     }
 
@@ -37,26 +37,25 @@ function startGame(){
         canvas.classList.remove('show');
         canvas.classList.add('hide');
         gameOver.classList.remove('hide');
-        reload();
+        tryAgain();
     }
 
-    function reload(){
-        const reload = document.querySelector('#reload');
-        reload.addEventListener('click', function(){
-            reload.classList.add('hide');
-            const gameOver = document.querySelector('#gameOver');
-            gameOver.classList.add('hide');
+    function tryAgain() {
+        const tryAgain = document.querySelector('#reload');
+        tryAgain.addEventListener('click', function(){
+            let gameOver = document.querySelector('#gameOver');
             gameOver.classList.remove('show');
-            daleGame();
-        })
+            gameOver.classList.add('hide');
+            pisaBienGame();
+          })
     }
 
     function victory(){
         let win = document.querySelector('#win');
         let canvas = document.querySelector('#pisaBien');
         canvas.classList.remove('show');
+        canvas.classList.add('hide');
         win.classList.remove('hide');
-        win.classList.add('show');
     }
 
 startGame();

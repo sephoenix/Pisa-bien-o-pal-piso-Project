@@ -1,27 +1,28 @@
 class Game {
-    constructor(options, callback) {
+    constructor(options, callback, victoryCb) {
         this.ctx = options.ctx;
         this.player = options.player;
         this.steps = steps;
         this.cb = callback;
+        this.victoryCb = victoryCb;
         this.countdown = 5;
         this.interval;
     }
 
     _drawPlayer() {
-        this.ctx.fillStyle = this.player.color;
-        this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
-/*         this.ctx.drawImage(
+        //this.ctx.fillStyle = this.player.color;
+        //this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
+        this.ctx.drawImage(
             playerSprite.sprite,
             playerSprite.x,
             playerSprite.y,
             playerSprite.width,
             playerSprite.height,
-            this.player.x = 210,
-            this.player.y = 20,
-            this.player.width = 50,
-            this.player.height = 50
-        ); */
+            this.player.x,
+            this.player.y,
+            this.player.width,
+            this.player.height
+        ); 
     }
 
     _drawSteps(){
@@ -34,9 +35,6 @@ class Game {
         for (let i = 0; i < this.steps.length; i++){
             if (this.player.x === this.steps[i].x && this.player.y === this.steps[i].y && this.steps[i].stat === false){
                 this.player.stat = 'dead';
-            } else if (this.player.x === 210 && this.player.y === 720){
-                console.log('you win');
-                this.player.stat = 'winner';
             }
         }
     }
@@ -45,6 +43,13 @@ class Game {
         this.interval = setInterval(() => {
             this.countdown = this.countdown - 1;
             }, 1000);
+    }
+
+    _victoria(){
+        if (this.player.x === 210 && this.player.y === 720){
+            this.victoryCb();
+            clearInterval(this.interval);
+        }
     }
 
     _finalCountdown() {
@@ -56,9 +61,7 @@ class Game {
     _playerStat(){
         if (this.player.stat === 'dead'){
             this.cb();
-        } /* else if (this.player.stat === 'winner'){
-            this.cb(victory());
-        } */
+        }
     }
 
     _drawTime() {
@@ -95,7 +98,8 @@ class Game {
         this._drawTime();
         this._finalCountdown();
         this._checkSteps();
-        this._playerStat();    
+        this._playerStat();
+        this._victoria();
         window.requestAnimationFrame(this._renderGame.bind(this));
         }
     
