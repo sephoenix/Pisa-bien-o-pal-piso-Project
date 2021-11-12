@@ -9,8 +9,8 @@ playerSprite.sprite.src = './images/Sprite.png';
 
 const stepSprite = {
     sprite: new Image(),
-    width: 70,
-    height: 70,
+    width: 50,
+    height: 50,
     x: 5,
     y: 5,
 };

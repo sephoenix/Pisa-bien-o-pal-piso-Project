@@ -10,8 +10,6 @@ class Game {
     }
 
     _drawPlayer() {
-        //this.ctx.fillStyle = this.player.color;
-        //this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
         this.ctx.drawImage(
             playerSprite.sprite,
             playerSprite.x,
