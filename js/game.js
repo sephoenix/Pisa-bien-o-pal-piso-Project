@@ -5,7 +5,7 @@ class Game {
         this.steps = steps;
         this.cb = callback;
         this.victoryCb = victoryCb;
-        this.countdown = 5;
+        this.countdown = 10;
         this.interval;
     }
 
